@@ -1,6 +1,6 @@
 
 Ho seguito un corso e ho studiato un po' di Laravel ed ho provato a sporcarmi le mani.
-Il risualtatao è un backend di demo che risponde in formato json, ci sono delle parti da completare,  da modificare, e correggere.
+Il risultato è un backend di demo che risponde in formato json, ci sono delle parti da completare,  da modificare, e correggere.
 Cosi come è non utilizzabile, è un caso studio per prendere dimestichezza con Laravel.
 Nei files che ho modificato dento backend/src si trova la stringa "** DEMO-LARAVEL **"
 Credo che possa far intravedere le potenzialità di Laravel e la semplicità del codice che si utilizza con esso,
