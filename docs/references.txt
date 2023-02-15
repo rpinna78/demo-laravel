@@ -1,0 +1,17 @@
+
+
+
+Laravel doc 
+https://laravel.com/docs/9.x
+
+Esempio di Crud Laravel con client Angular: 
+https://www.youtube.com/watch?v=w4NX6Y4owWs
+
+Tantissimi helper utili con Laravel 
+https://laravel.com/docs/9.x/helpers#main-content
+
+
+
+
+
+

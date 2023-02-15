@@ -1,0 +1,36 @@
+Cucinare le immagini docker:
+    docker build --no-cache  -t demo-laravel .
+
+Start&Stop ambiente di sviluppo
+    docker-compose up -d
+    docker-compose down 
+
+Importare ed esporate dump DB*
+EXPORT DB
+cd dump
+mysqldump -u $USER -p $DB > dump_local_$DATA.sql
+*IMPORT DB
+cd dump
+mysql -u $USER -p $DB < dump_local_$DATA.sql
+
+La riga di comando con Laravel si utilizza:
+php artisan che può essere utiler per avere tutti gli Help
+
+Esempi di comandi:
+php artisan list
+php artisan route:list
+php artisan make:model Book -c -m --api --resource --policy
+php artisan make:controller TestController
+php artisan make:migration crea_tabella_corsi --create=corsi
+php artisan migrate
+
+
+# comandi se per qualche prova non si utilizza un git remoto per avere un versioning in un unico bundle
+git bundle create demoLaravelBundle --all
+git clone -b master demoLaravelBundle quotes
+
+### Docker Push ####
+docker tag $IMAGEID rpinna78/demo-laravel:version0.2
+docker push rpinna78/demo-laravel:version0.2
+docker tag $IMAGEID rpinna78/demo-laravel:latest
+docker push rpinna78/demo-laravel:latest

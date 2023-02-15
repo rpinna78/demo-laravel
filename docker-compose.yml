@@ -1,0 +1,46 @@
+version: "2"
+
+services:
+  demobackend:
+    image: rpinna78/demo-laravel
+    depends_on:
+      - demomysql
+    links:
+      - demomysql
+    volumes:
+    - .\backend\src\app:/var/www/html/demo-laravel/app
+    - .\backend\src\bootstrap:/var/www/html/demo-laravel/bootstrap
+    - .\backend\src\config:/var/www/html/demo-laravel/config
+    - .\backend\src\database:/var/www/html/demo-laravel/database
+    - .\backend\src\lang:/var/www/html/demo-laravel/lang
+    - .\backend\src\public:/var/www/html/demo-laravel/public
+    - .\backend\src\routes:/var/www/html/demo-laravel/routes
+    - .\backend\src\public\public\uploads:/var/www/html/demo-laravel/storage/app/public/uploads
+    - .\backend\tmp:/var/www/html/tmp-shared
+    - .\docker-logs\apache2:/var/log/apache2
+    ports:
+      - 8080:80
+    container_name: demobackend
+    env_file:
+      - local.env
+  demomysql:
+    image: mysql:5.7
+    container_name: demomysql
+    command: --max_allowed_packet=32505856
+    volumes:
+    - .\mysql-data\db-mysql:/var/lib/mysql
+    - .\mysql-data\dump-mysql:/dump
+    ports:
+    - "33060:3306"
+    env_file:
+      - local.env
+  demophpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: demophpmyadmin
+    links:
+      - demomysql
+    restart: always
+    ports:
+      - 8081:80
+    env_file:
+      - local.env

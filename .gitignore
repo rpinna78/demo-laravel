@@ -1,0 +1,8 @@
+/docker-logs
+/backend/tmp
+/backend/src/public/public
+/mysql-data
+
+# System files
+.DS_Store
+Thumbs.db
